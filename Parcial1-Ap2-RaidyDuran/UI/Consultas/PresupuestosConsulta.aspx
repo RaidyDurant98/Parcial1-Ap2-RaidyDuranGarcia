@@ -14,9 +14,21 @@
     <title>Consulta de Presupuestos</title>
 </head>
 <body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="#">Parcial1-Ap2-RaidyDuran</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav">
+                <a class="nav-item nav-link" href="#">Inicio <span class="sr-only">(current)</span></a>
+                <a class="nav-item nav-link active" href="#">Presupuestos</a>
+            </div>
+        </div>
+    </nav>
     <br />
     <br />
-    <div class="container">
+    <div class="container-fluid">
         <ul class="nav nav-tabs">
             <li class="nav-item">
                 <a class="nav-link " href="../Registros/PresupuestoForm.aspx">Registro</a>
@@ -81,7 +93,7 @@
                         </div>
                         <asp:GridView CssClass="table table-responsive table-hover" BorderStyle="None" ID="PresupuestoConsultaGridView" runat="server" 
                             AutoGenerateColumns="False" GridLines="Horizontal" DataKeyNames="PresupuestoId,Descripcion" ShowFooter="true">
-                            <HeaderStyle CssClass="bg-dark"/>
+                            <HeaderStyle CssClass="bg-dark text-white"/>
                             <Columns>
                                 <asp:BoundField DataField="Presupuestoid" HeaderText="Presupuesto Id"/>
                                 <asp:BoundField DataField="Descripcion" HeaderText="Descripcion"/>
