@@ -11,6 +11,9 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js"></script>
 
+    <!--Inclusion de Scripts personales-->
+    <script src="../../Scripts/Scripts.js"></script>
+
     <title>Registro de Presupuesto</title>
 </head>
 <body>
@@ -23,7 +26,7 @@
         <div class="col-12 col-sm-8 col-md-6 col-lg-5">
             <form id="PresupuestoForm" runat="server">
                 <div class="float-right">
-                    <asp:Button CssClass="btn btn-dark" ID="BuscarButton" runat="server" Text="Buscar" />
+                    <asp:Button CssClass="btn btn-dark" ID="BuscarButton" runat="server" Text="Buscar" OnClick="BuscarButton_Click"/>
                 </div>
                 <br />
                 <!--Presupuesto Id-->
@@ -48,9 +51,9 @@
                 </div>
                 <!--Botones-->
                 <div class="text-center">
-                    <asp:Button CssClass="btn btn-dark" ID="NuevoButton" runat="server" Text="Nuevo" />
-                    <asp:Button CssClass="btn btn-dark" ID="GuardarButton" runat="server" Text="Guardar"/>
-                    <asp:Button CssClass="btn btn-dark" ID="EnviarAlModalEliminarButton" runat="server" Text="Eliminar"/>
+                    <asp:Button CssClass="btn btn-dark" ID="NuevoButton" runat="server" Text="Nuevo" OnClick="NuevoButton_Click"/>
+                    <asp:Button CssClass="btn btn-dark" ID="GuardarButton" runat="server" Text="Guardar" OnClick="GuardarButton_Click"/>
+                    <asp:Button CssClass="btn btn-dark" ID="EnviarAlModalEliminarButton" runat="server" Text="Eliminar" OnClick="EnviarAlModalEliminarButton_Click"/>
                 </div>
                 <!--Modal de confirmacion de eliminar-->
                 <div class="modal" id="ModalEliminar">
@@ -66,7 +69,7 @@
                                 <p>Esta seguro de eliminar este usuario?</p>
                             </div>
                             <div class="modal-footer">
-                                <asp:Button ID="EliminarButton" runat="server" CssClass="btn btn-secondary" Text="Si"/>
+                                <asp:Button ID="EliminarButton" runat="server" CssClass="btn btn-secondary" Text="Si" OnClick="EliminarButton_Click"/>
                                 <button type="button" class="btn btn-secondary" data-dismiss="modal">No</button>
                             </div>
                         </div>
