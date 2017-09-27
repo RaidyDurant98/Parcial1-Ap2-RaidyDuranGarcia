@@ -65,5 +65,37 @@ namespace BLL
                 }
             }
         }
+
+        public static List<Presupuestos> GetListAll()
+        {
+            using (var context = new Respository<Presupuestos>())
+            {
+                try
+                {
+                    return context.GetListAll();
+                }
+                catch (Exception)
+                {
+
+                    throw;
+                }
+            }
+        }
+
+        public static List<Presupuestos> GetList(Expression<Func<Presupuestos, bool>> criterio)
+        {
+            using (var context = new Respository<Presupuestos>())
+            {
+                try
+                {
+                    return context.GetList(criterio);
+                }
+                catch (Exception)
+                {
+
+                    throw;
+                }
+            }
+        }
     }
 }

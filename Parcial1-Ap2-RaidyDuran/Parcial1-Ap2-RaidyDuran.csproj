@@ -92,6 +92,7 @@
     <Content Include="Global.asax" />
     <Content Include="App_Data\Scripts.sql" />
     <Content Include="Scripts\Scripts.js" />
+    <Content Include="UI\Consultas\PresupuestosConsulta.aspx" />
     <Content Include="UI\Registros\PresupuestoForm.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
@@ -105,6 +106,13 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
       <DependentUpon>Settings.settings</DependentUpon>
     </Compile>
+    <Compile Include="UI\Consultas\PresupuestosConsulta.aspx.cs">
+      <DependentUpon>PresupuestosConsulta.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UI\Consultas\PresupuestosConsulta.aspx.designer.cs">
+      <DependentUpon>PresupuestosConsulta.aspx</DependentUpon>
+    </Compile>
     <Compile Include="UI\Registros\PresupuestoForm.aspx.cs">
       <DependentUpon>PresupuestoForm.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -117,7 +125,6 @@
   <ItemGroup>
     <Folder Include="DataBase\" />
     <Folder Include="Models\" />
-    <Folder Include="UI\Consultas\" />
     <Folder Include="UI\Reportes\" />
   </ItemGroup>
   <ItemGroup>
