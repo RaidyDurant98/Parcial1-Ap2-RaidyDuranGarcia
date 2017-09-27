@@ -75,10 +75,20 @@ namespace Parcial1_Ap2_RaidyDuran.UI.Registros
 
         private void DatosPresupuesto()
         {
-            PresupuestoIdTextBox.Text = presupuesto.PresupuestoId.ToString();//Chequear
+            string fechaMonth = presupuesto.Fecha.Month.ToString();
+            string fechaDay = presupuesto.Fecha.Day.ToString();
+
+            if (presupuesto.Fecha.Month < 10)
+            {
+                fechaMonth = ("0" + presupuesto.Fecha.Month);
+            }
+            else if (presupuesto.Fecha.Day < 10)
+            {
+                fechaDay = ("0" + presupuesto.Fecha.Day);
+            }
             DescripcionTextBox.Text = presupuesto.Descripcion;
             MontoTextBox.Text = presupuesto.Monto.ToString();
-            FechaTextBox.Text = (presupuesto.Fecha.Year + "/" + presupuesto.Fecha.Month + "/" + presupuesto.Fecha.Day);
+            FechaTextBox.Text = (presupuesto.Fecha.Year +"-"+ fechaMonth +"-"+ fechaDay);
         }
 
         private void BuscarPresupuesto()
