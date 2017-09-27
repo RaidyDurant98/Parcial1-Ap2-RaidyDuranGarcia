@@ -85,6 +85,10 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="App_Data\Parcial1Db.mdf" />
+    <Content Include="App_Data\Parcial1Db_log.ldf">
+      <DependentUpon>Parcial1Db.mdf</DependentUpon>
+    </Content>
     <Content Include="Global.asax" />
     <Content Include="App_Data\Scripts.sql" />
     <Content Include="UI\Registros\PresupuestoForm.aspx" />
@@ -109,6 +113,7 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="DataBase\" />
     <Folder Include="Models\" />
     <Folder Include="Scripts\" />
     <Folder Include="UI\Consultas\" />

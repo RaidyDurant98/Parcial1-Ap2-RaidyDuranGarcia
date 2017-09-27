@@ -28,7 +28,7 @@ namespace Entidades.Properties {
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
         [global::System.Configuration.DefaultSettingValueAttribute("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=\"C:\\Users\\raidy\\Desktop\\UCNE\\" +
             "PROGRAMACION APLICADA II\\Parcial1-Ap2-RaidyDuran\\Parcial1-Ap2-RaidyDuran\\App_Dat" +
-            "a\\Parcial1Ap2Db.mdf\";Integrated Security=True;Connect Timeout=30")]
+            "a\\Parcial1Db.mdf\";Integrated Security=True;Connect Timeout=30")]
         public string ConStr {
             get {
                 return ((string)(this["ConStr"]));

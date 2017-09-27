@@ -1,4 +1,6 @@
-﻿create table Presupuestos(
+﻿use Parcial1Db;
+
+create table Presupuestos(
 PresupuestoId int identity(1,1) primary key,
 Descripcion varchar(255),
 Monto decimal,
