@@ -69,7 +69,7 @@
                 <!--Fecha-->
                 <div class="form-group">
                     <asp:Label ID="FechaLabel" runat="server" Text="Fecha:"></asp:Label>
-                    <asp:TextBox CssClass="form-control" ID="FechaTextBox" runat="server" type="date" AutoComplete="off"></asp:TextBox>
+                    <asp:TextBox CssClass="form-control" ID="FechaTextBox" runat="server" TextMode="date" AutoComplete="off"></asp:TextBox>
                 </div>
                 <!--Botones-->
                 <div class="text-center">

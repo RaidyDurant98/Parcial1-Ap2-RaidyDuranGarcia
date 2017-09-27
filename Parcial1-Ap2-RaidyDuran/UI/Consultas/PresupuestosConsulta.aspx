@@ -103,7 +103,7 @@
                         </asp:GridView> 
                         <div class="float-left">
                             <asp:Button CssClass="btn btn-dark" ID="ImprimirButton" runat="server" CommandName="Select" Text="Imprimir" OnClick="ImprimirButton_Click"/>
-                        </div>
+                        </div>                 
                     </div>
                 </div><!--Div grid view-->
             </div><!--Container-->

@@ -34,6 +34,13 @@ namespace Parcial1_Ap2_RaidyDuran.UI.Consultas
             }
         }
 
+        private void Limpiar()
+        {
+            FiltroTextBox.Text = "";
+            FechaDesdeTextBox.Text = "";
+            FechaHastaTextBox.Text = "";
+        }
+
         private void CargarListaPresupuesto()
         {
             PresupuestoConsultaGridView.DataSource = Lista;
@@ -71,6 +78,7 @@ namespace Parcial1_Ap2_RaidyDuran.UI.Consultas
             if (FiltrarDropDownList.SelectedIndex == 0)
             {
                 Lista = BLL.PresupuestosBLL.GetListAll();
+                Limpiar();
             }
             else if (FiltrarDropDownList.SelectedIndex != 0)
             {
