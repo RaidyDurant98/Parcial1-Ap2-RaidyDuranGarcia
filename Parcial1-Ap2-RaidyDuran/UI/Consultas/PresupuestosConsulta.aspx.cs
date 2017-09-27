@@ -118,7 +118,6 @@ namespace Parcial1_Ap2_RaidyDuran.UI.Consultas
             }
             else
             {
-                //ImprimirButton.Visible = false;
                 Filtrar();
                 BotonImprimirVisibleSiHayListas();
             }
@@ -126,7 +125,7 @@ namespace Parcial1_Ap2_RaidyDuran.UI.Consultas
 
         protected void ImprimirButton_Click(object sender, EventArgs e)
         {
-            Response.Redirect("../../Reportes/Presupuestoreporte.aspx");
+            Response.Redirect("../Reportes/PresupuestosReporte.aspx");
         }
     }
 }

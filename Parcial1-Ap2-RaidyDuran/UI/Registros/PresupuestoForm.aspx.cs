@@ -19,6 +19,7 @@ namespace Parcial1_Ap2_RaidyDuran.UI.Registros
             AlertSuccessPanel.Visible = false;
             AlertInfoPanel.Visible = false;
             AlertDangerPanel.Visible = false;
+            
         }
 
         private void AsignarTextoAlertaInfo(string texto)
