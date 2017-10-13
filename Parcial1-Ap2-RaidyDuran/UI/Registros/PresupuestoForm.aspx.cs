@@ -3,6 +3,7 @@ using Entidades;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
@@ -19,7 +20,23 @@ namespace Parcial1_Ap2_RaidyDuran.UI.Registros
             AlertSuccessPanel.Visible = false;
             AlertInfoPanel.Visible = false;
             AlertDangerPanel.Visible = false;
+
+            if (!Page.IsPostBack)
+            {
+                LlenarCombo();
+            }
             
+        }
+
+        private void LlenarCombo()
+        {
+            List<Entidades.Categorias> Lista = BLL.CategoriasBLL.GetListAll();
+
+            CategoriaDropDownList.DataSource = Lista;
+            CategoriaDropDownList.DataValueField = "CategoriaId";
+            CategoriaDropDownList.DataTextField = "Descripcion";
+            CategoriaDropDownList.DataBind();
+
         }
 
         private void AsignarTextoAlertaInfo(string texto)
@@ -70,6 +87,7 @@ namespace Parcial1_Ap2_RaidyDuran.UI.Registros
             {
                 interruptor = false;
             }
+
             return interruptor;
         }
 
@@ -88,7 +106,7 @@ namespace Parcial1_Ap2_RaidyDuran.UI.Registros
             }
             DescripcionTextBox.Text = presupuesto.Descripcion;
             MontoTextBox.Text = presupuesto.Monto.ToString();
-            FechaTextBox.Text = (presupuesto.Fecha.Year +"-"+ fechaMonth +"-"+ fechaDay);
+            FechaTextBox.Text = presupuesto.Fecha.ToString("yyyy-MM-dd");// (presupuesto.Fecha.Year +"-"+ fechaMonth +"-"+ fechaDay);
         }
 
         private void BuscarPresupuesto()
@@ -121,6 +139,7 @@ namespace Parcial1_Ap2_RaidyDuran.UI.Registros
             presupuesto.Descripcion = DescripcionTextBox.Text;
             presupuesto.Monto = Utilidades.TOINT(MontoTextBox.Text);
             presupuesto.Fecha = Convert.ToDateTime(FechaTextBox.Text);
+            presupuesto.CategoriaId = Utilidades.TOINT(CategoriaDropDownList.Text);
 
             return presupuesto;
         }

@@ -76,6 +76,24 @@ namespace Parcial1_Ap2_RaidyDuran.UI.Registros {
         protected global::System.Web.UI.WebControls.TextBox MontoTextBox;
         
         /// <summary>
+        /// CategoriaLabel control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label CategoriaLabel;
+        
+        /// <summary>
+        /// CategoriaDropDownList control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList CategoriaDropDownList;
+        
+        /// <summary>
         /// FechaLabel control.
         /// </summary>
         /// <remarks>

@@ -97,6 +97,7 @@
                                 <asp:BoundField DataField="Presupuestoid" HeaderText="Presupuesto Id"/>
                                 <asp:BoundField DataField="Descripcion" HeaderText="Descripcion"/>
                                 <asp:BoundField DataField="Monto" HeaderText="Monto"/>
+                                <asp:BoundField DataField="CategoriaId" HeaderText="Categoria"/>
                                 <asp:BoundField DataField="Fecha" DataFormatString="{0:d}" HeaderText="Fecha Inscripcion"/>     
                             </Columns>
                             <FooterStyle CssClass="bg-dark"/>

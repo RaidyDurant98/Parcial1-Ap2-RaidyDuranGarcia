@@ -66,6 +66,11 @@
                     <asp:Label ID="MontoLabel" runat="server" Text="Monto:"></asp:Label>
                     <asp:TextBox CssClass="form-control" ID="MontoTextBox" runat="server" AutoComplete="off"></asp:TextBox>
                 </div>
+                <!--Categoria-->
+                <div class="form-group">
+                    <asp:Label ID="CategoriaLabel" runat="server" Text="Categoria:"></asp:Label>
+                    <asp:DropDownList CssClass="form-control" ID="CategoriaDropDownList" runat="server"></asp:DropDownList>
+                </div>
                 <!--Fecha-->
                 <div class="form-group">
                     <asp:Label ID="FechaLabel" runat="server" Text="Fecha:"></asp:Label>
@@ -73,15 +78,15 @@
                 </div>
                 <!--Botones-->
                 <div class="text-center">
-                    <asp:Button CssClass="btn btn-dark" ID="NuevoButton" runat="server" Text="Nuevo" OnClick="NuevoButton_Click"/>
-                    <asp:Button CssClass="btn btn-dark" ID="GuardarButton" runat="server" Text="Guardar" OnClick="GuardarButton_Click"/>
-                    <asp:Button CssClass="btn btn-dark" ID="EnviarAlModalEliminarButton" runat="server" Text="Eliminar" OnClick="EnviarAlModalEliminarButton_Click"/>
+                    <asp:Button CssClass="btn btn-dafault" ID="NuevoButton" runat="server" Text="Nuevo" OnClick="NuevoButton_Click"/>
+                    <asp:Button CssClass="btn btn-primary" ID="GuardarButton" runat="server" Text="Guardar" OnClick="GuardarButton_Click"/>
+                    <asp:Button CssClass="btn btn-danger" ID="EnviarAlModalEliminarButton" runat="server" Text="Eliminar" OnClick="EnviarAlModalEliminarButton_Click"/>
                 </div>
                 <!--Modal de confirmacion de eliminar-->
                 <div class="modal" id="ModalEliminar">
                     <div class="modal-dialog" role="document">
                         <div class="modal-content ">
-                            <div class="modal-header bg-secondary">
+                            <div class="modal-header bg-Primary">
                                 <h5 class="modal-title">¡Atencion!</h5>
                                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                     <span aria-hidden="true">&times;</span>

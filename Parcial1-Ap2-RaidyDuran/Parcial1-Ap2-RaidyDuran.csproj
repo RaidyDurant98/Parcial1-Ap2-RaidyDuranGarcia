@@ -101,6 +101,17 @@
     <Content Include="Parcial1DbDataSet.xsc">
       <DependentUpon>Parcial1DbDataSet.xsd</DependentUpon>
     </Content>
+    <Content Include="Parcial1bDataSet2.xsc">
+      <DependentUpon>Parcial1bDataSet2.xsd</DependentUpon>
+    </Content>
+    <None Include="Parcial1bDataSet2.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Parcial1bDataSet2.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <Content Include="Parcial1bDataSet2.xss">
+      <DependentUpon>Parcial1bDataSet2.xsd</DependentUpon>
+    </Content>
     <None Include="Parcial1DbDataSet.xsd">
       <Generator>MSDataSetGenerator</Generator>
       <LastGenOutput>Parcial1DbDataSet.Designer.cs</LastGenOutput>
@@ -149,6 +160,11 @@
   <ItemGroup>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Parcial1bDataSet2.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Parcial1bDataSet2.xsd</DependentUpon>
     </Compile>
     <Compile Include="Parcial1DbDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
