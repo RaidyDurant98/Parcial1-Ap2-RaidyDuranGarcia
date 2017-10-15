@@ -93,6 +93,11 @@ namespace Parcial1_Ap2_RaidyDuran.UI.Consultas
                     DateTime FechaHasta = Convert.ToDateTime(FechaHastaTextBox.Text);
                     Lista = BLL.PresupuestosBLL.GetList(p => p.Fecha >= FechaDesde.Date && p.Fecha <= FechaHasta.Date);
                 }
+                if (FiltrarDropDownList.SelectedIndex == 3)
+                {
+                    int id = Utilidades.TOINT(FiltroTextBox.Text);
+                    Lista = BLL.PresupuestosBLL.GetList(p => p.CategoriaId == id);
+                }
             }
             CargarListaPresupuesto();
             if (Lista.Count() == 0)
@@ -104,7 +109,7 @@ namespace Parcial1_Ap2_RaidyDuran.UI.Consultas
 
         protected void FiltroButton_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrEmpty(FiltroTextBox.Text) && FiltrarDropDownList.SelectedIndex == 1)
+            if (string.IsNullOrEmpty(FiltroTextBox.Text) && (FiltrarDropDownList.SelectedIndex == 1 || FiltrarDropDownList.SelectedIndex == 3))
             {
                 PresupuestoConsultaGridView.DataBind();
                 AsignarTextoAlertaInfo("Por favor digite el dato que desea filtrar.");
