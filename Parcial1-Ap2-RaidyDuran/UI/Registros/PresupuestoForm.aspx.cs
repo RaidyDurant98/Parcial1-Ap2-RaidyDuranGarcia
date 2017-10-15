@@ -24,8 +24,7 @@ namespace Parcial1_Ap2_RaidyDuran.UI.Registros
             if (!Page.IsPostBack)
             {
                 LlenarCombo();
-            }
-            
+            }  
         }
 
         private void LlenarCombo()
@@ -36,7 +35,6 @@ namespace Parcial1_Ap2_RaidyDuran.UI.Registros
             CategoriaDropDownList.DataValueField = "CategoriaId";
             CategoriaDropDownList.DataTextField = "Descripcion";
             CategoriaDropDownList.DataBind();
-
         }
 
         private void AsignarTextoAlertaInfo(string texto)

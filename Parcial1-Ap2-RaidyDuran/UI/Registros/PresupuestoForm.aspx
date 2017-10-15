@@ -25,7 +25,8 @@
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
             <div class="navbar-nav">
                 <a class="nav-item nav-link" href="#">Inicio <span class="sr-only">(current)</span></a>
-                <a class="nav-item nav-link active" href="#">Presupuestos</a>
+                <a class="nav-item nav-link active" href="PresupuestoForm.aspx">Presupuestos</a>
+                <a class="nav-item nav-link" href="CategoriasForm.aspx">Categorias</a>
             </div>
         </div>
     </nav>
@@ -33,7 +34,7 @@
     <div class="container-fluid">
         <ul class="nav nav-tabs">
             <li class="nav-item">
-                <a class="nav-link active" href="PresupuestosForm.aspx">Registro</a>
+                <a class="nav-link active" href="PresupuestoForm.aspx">Registro</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="../Consultas/PresupuestosConsulta.aspx">Consulta</a>
@@ -78,7 +79,7 @@
                 </div>
                 <!--Botones-->
                 <div class="text-center">
-                    <asp:Button CssClass="btn btn-dafault" ID="NuevoButton" runat="server" Text="Nuevo" OnClick="NuevoButton_Click"/>
+                    <asp:Button CssClass="btn btn-dafault" ID="NuevoButton" runat="server" Text="Nuevo"/>
                     <asp:Button CssClass="btn btn-primary" ID="GuardarButton" runat="server" Text="Guardar" OnClick="GuardarButton_Click"/>
                     <asp:Button CssClass="btn btn-danger" ID="EnviarAlModalEliminarButton" runat="server" Text="Eliminar" OnClick="EnviarAlModalEliminarButton_Click"/>
                 </div>
