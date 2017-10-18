@@ -98,15 +98,19 @@
                             <Columns>
                                 <asp:BoundField DataField="Presupuestoid" HeaderText="Presupuesto Id"/>
                                 <asp:BoundField DataField="Descripcion" HeaderText="Descripcion"/>
-                                <asp:BoundField DataField="Monto" HeaderText="Monto"/>
                                 <asp:BoundField DataField="CategoriaId" HeaderText="Categoria"/>
-                                <asp:BoundField DataField="Fecha" DataFormatString="{0:d}" HeaderText="Fecha Inscripcion"/>     
+                                <asp:BoundField DataField="Fecha" DataFormatString="{0:d}" HeaderText="Fecha Inscripcion"/>   
+                                <asp:BoundField DataField="Monto" HeaderText="Monto"/>
                             </Columns>
                             <FooterStyle CssClass="bg-dark"/>
                         </asp:GridView> 
                         <div class="float-left">
                             <asp:Button CssClass="btn btn-dark" ID="ImprimirButton" runat="server" CommandName="Select" Text="Imprimir" OnClick="ImprimirButton_Click"/>
-                        </div>                 
+                        </div>    
+                        <div class="float-right">
+                            <asp:Label ID="TotalLabel" runat="server"><strong>Total:</strong></asp:Label>
+                            <asp:Label ID="TotalMontoLabel" runat="server" Font-Size="X-Large"><strong>0.0</strong></asp:Label>
+                        </div>
                     </div>
                 </div><!--Div grid view-->
             </div><!--Container-->

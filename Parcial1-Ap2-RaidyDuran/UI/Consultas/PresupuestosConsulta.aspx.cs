@@ -27,10 +27,14 @@ namespace Parcial1_Ap2_RaidyDuran.UI.Consultas
             if (Lista == null || Lista.Count() == 0)
             {
                 ImprimirButton.Visible = false;
+                TotalLabel.Visible = false;
+                TotalMontoLabel.Visible = false;
             }
             else
             {
                 ImprimirButton.Visible = true;
+                TotalLabel.Visible = true;
+                TotalMontoLabel.Visible = true;
             }
         }
 
@@ -39,12 +43,14 @@ namespace Parcial1_Ap2_RaidyDuran.UI.Consultas
             FiltroTextBox.Text = "";
             FechaDesdeTextBox.Text = "";
             FechaHastaTextBox.Text = "";
+            TotalMontoLabel.Text = "0.0";
         }
 
         private void CargarListaPresupuesto()
         {
             PresupuestoConsultaGridView.DataSource = Lista;
             PresupuestoConsultaGridView.DataBind();
+            LlenarLabelMonto();
         }
 
         private void BotonImprimirVisibleSiHayListas()
@@ -104,6 +110,8 @@ namespace Parcial1_Ap2_RaidyDuran.UI.Consultas
             {
                 AsignarTextoAlertaInfo("No existe presupuesto.");
                 ImprimirButton.Visible = false;
+                TotalLabel.Visible = false;
+                TotalMontoLabel.Visible = false;
             }
         }
 
@@ -114,6 +122,8 @@ namespace Parcial1_Ap2_RaidyDuran.UI.Consultas
                 PresupuestoConsultaGridView.DataBind();
                 AsignarTextoAlertaInfo("Por favor digite el dato que desea filtrar.");
                 ImprimirButton.Visible = false;
+                TotalMontoLabel.Visible = false;
+                TotalLabel.Visible = false;
             }
             else if (FiltrarDropDownList.SelectedIndex == 2)
             {
@@ -122,6 +132,8 @@ namespace Parcial1_Ap2_RaidyDuran.UI.Consultas
                     PresupuestoConsultaGridView.DataBind();
                     AsignarTextoAlertaInfo("Por favor eliga el rango de fecha que desea filtrar.");
                     ImprimirButton.Visible = false;
+                    TotalMontoLabel.Visible = false;
+                    TotalLabel.Visible = false;
                 }
                 else
                 {
@@ -134,6 +146,17 @@ namespace Parcial1_Ap2_RaidyDuran.UI.Consultas
                 Filtrar();
                 BotonImprimirVisibleSiHayListas();
             }
+        }
+
+        private void LlenarLabelMonto()
+        {
+            decimal monto = 0;
+            foreach (GridViewRow montoCount in PresupuestoConsultaGridView.Rows)
+            {
+                monto += Convert.ToDecimal(montoCount.Cells[4].Text);     
+            }
+
+            TotalMontoLabel.Text = monto.ToString();
         }
 
         protected void ImprimirButton_Click(object sender, EventArgs e)
