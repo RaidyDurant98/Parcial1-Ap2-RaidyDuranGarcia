@@ -16,9 +16,11 @@ namespace Entidades
         public DateTime Fecha { get; set; }
         public int CategoriaId { get; set; }
 
+        public virtual ICollection<PresupuestosCategorias> Relacion { get; set; }
+
         public Presupuestos()
         {
-
+            this.Relacion = new HashSet<PresupuestosCategorias>();
         }
 
         public Presupuestos(int presupuestoId, string descripcion, decimal monto, DateTime fecha)

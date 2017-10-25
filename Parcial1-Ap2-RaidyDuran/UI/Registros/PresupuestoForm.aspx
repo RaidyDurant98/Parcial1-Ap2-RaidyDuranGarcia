@@ -6,7 +6,7 @@
 <head runat="server">
 
     <!--Inclusión de Bootstrap 4.0.0-->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" />
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js"></script>
@@ -49,7 +49,7 @@
         <div class="col-12 col-sm-8 col-md-6 col-lg-5">
             <form id="PresupuestoForm" runat="server">
                 <div class="float-right">
-                    <asp:Button CssClass="btn btn-dark" ID="BuscarButton" runat="server" Text="Buscar" OnClick="BuscarButton_Click"/>
+                    <asp:Button CssClass="btn btn-dark" ID="BuscarButton" runat="server" Text="Buscar" OnClick="BuscarButton_Click" />
                 </div>
                 <br />
                 <!--Presupuesto Id-->
@@ -57,31 +57,41 @@
                     <asp:Label ID="PresupuestoIdLabel" runat="server" Text="Presupuesto Id:"></asp:Label>
                     <asp:TextBox CssClass="form-control" ID="PresupuestoIdTextBox" runat="server" AutoComplete="off"></asp:TextBox>
                 </div>
-                <!--Descripcion-->
-                <div class="form-group">
-                    <asp:Label ID="DescripcionLabel" runat="server" Text="Descripcion:"></asp:Label>
-                    <asp:TextBox CssClass="form-control" ID="DescripcionTextBox" runat="server" AutoComplete="off" Height="100px"></asp:TextBox>
-                </div>
-                <!--Monto-->
-                <div class="form-group">
-                    <asp:Label ID="MontoLabel" runat="server" Text="Monto:"></asp:Label>
-                    <asp:TextBox CssClass="form-control" ID="MontoTextBox" runat="server" AutoComplete="off"></asp:TextBox>
-                </div>
-                <!--Categoria-->
-                <div class="form-group">
-                    <asp:Label ID="CategoriaLabel" runat="server" Text="Categoria:"></asp:Label>
-                    <asp:DropDownList CssClass="form-control" ID="CategoriaDropDownList" runat="server"></asp:DropDownList>
-                </div>
                 <!--Fecha-->
                 <div class="form-group">
                     <asp:Label ID="FechaLabel" runat="server" Text="Fecha:"></asp:Label>
                     <asp:TextBox CssClass="form-control" ID="FechaTextBox" runat="server" TextMode="date" AutoComplete="off"></asp:TextBox>
                 </div>
+                <!--Descripcion-->
+                <div class="form-group">
+                    <asp:Label ID="DescripcionLabel" runat="server" Text="Descripcion:"></asp:Label>
+                    <asp:TextBox CssClass="form-control" ID="DescripcionTextBox" runat="server" AutoComplete="off" Height="100px"></asp:TextBox>
+                </div>
+
+                <div class="form-inline">
+                    <!--Categoria-->
+                    <div class="form-group">
+                        <asp:Label ID="CategoriaLabel" runat="server" Text="Categoria:"></asp:Label>
+                        <asp:DropDownList CssClass="form-control" ID="CategoriaDropDownList" runat="server"></asp:DropDownList>
+                    </div>
+                    <!--Monto-->
+                    <div class="form-group">
+                        <asp:Label ID="MontoLabel" runat="server" Text="Monto:"></asp:Label>
+                        <asp:TextBox CssClass="form-control" ID="MontoTextBox" runat="server" AutoComplete="off"></asp:TextBox>
+                    </div>
+                    
+                    <asp:Button CssClass="btn btn-dafault" ID="AgregarButton" runat="server" Text="Agregar" OnClick="AgregarButton_Click" />
+                </div>
+
+                <div class="form-group">
+                    <asp:GridView ID="DetalleGridView" runat="server"></asp:GridView>
+                </div>
+
                 <!--Botones-->
                 <div class="text-center">
-                    <asp:Button CssClass="btn btn-dafault" ID="NuevoButton" runat="server" Text="Nuevo"/>
-                    <asp:Button CssClass="btn btn-primary" ID="GuardarButton" runat="server" Text="Guardar" OnClick="GuardarButton_Click"/>
-                    <asp:Button CssClass="btn btn-danger" ID="EnviarAlModalEliminarButton" runat="server" Text="Eliminar" OnClick="EnviarAlModalEliminarButton_Click"/>
+                    <asp:Button CssClass="btn btn-dafault" ID="NuevoButton" runat="server" Text="Nuevo" />
+                    <asp:Button CssClass="btn btn-primary" ID="GuardarButton" runat="server" Text="Guardar" OnClick="GuardarButton_Click" />
+                    <asp:Button CssClass="btn btn-danger" ID="EnviarAlModalEliminarButton" runat="server" Text="Eliminar" OnClick="EnviarAlModalEliminarButton_Click" />
                 </div>
                 <!--Modal de confirmacion de eliminar-->
                 <div class="modal" id="ModalEliminar">
@@ -97,16 +107,17 @@
                                 <p>Esta seguro de eliminar este usuario?</p>
                             </div>
                             <div class="modal-footer">
-                                <asp:Button ID="EliminarButton" runat="server" CssClass="btn btn-secondary" Text="Si" OnClick="EliminarButton_Click"/>
+                                <asp:Button ID="EliminarButton" runat="server" CssClass="btn btn-secondary" Text="Si" OnClick="EliminarButton_Click" />
                                 <button type="button" class="btn btn-secondary" data-dismiss="modal">No</button>
                             </div>
                         </div>
                     </div>
-                </div><!--Fin Modal-->
+                </div>
+                <!--Fin Modal-->
             </form>
             <br />
             <!--Alertas-->
-            <asp:Panel CssClass="alert alert-success text-center" ID="AlertSuccessPanel"  role="alert" runat="server">
+            <asp:Panel CssClass="alert alert-success text-center" ID="AlertSuccessPanel" role="alert" runat="server">
                 <asp:Label ID="AlertSuccessLabel" runat="server" Text=""></asp:Label>
             </asp:Panel>
             <asp:Panel CssClass="alert alert-info text-center" ID="AlertInfoPanel" role="alert" runat="server">
@@ -118,7 +129,9 @@
             <asp:Panel CssClass="alert alert-Warnig text-center" ID="AlertWarningPanel" role="alert" runat="server">
                 <asp:Label ID="AlertWarningLabel" runat="server" Text=""></asp:Label>
             </asp:Panel>
-        </div><!--Col formulario-->
-    </div><!--Container-fluid-->
+        </div>
+        <!--Col formulario-->
+    </div>
+    <!--Container-fluid-->
 </body>
 </html>

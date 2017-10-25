@@ -12,7 +12,8 @@ namespace Parcial1_Ap2_RaidyDuran.UI.Registros
 {
     public partial class PresupuestoForm : System.Web.UI.Page
     {
-        public Presupuestos presupuesto;
+        public PresupuestosCategorias Detalle = null;
+        public Presupuestos presupuesto = null;
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -199,6 +200,24 @@ namespace Parcial1_Ap2_RaidyDuran.UI.Registros
             {
                 AsignarTextoAlertaDanger("No se pudo eliminar el presupuesto");
             }
+        }
+
+        private void AgregarDetalle()
+        {
+            presupuesto.Relacion.Add(new Entidades.PresupuestosCategorias(Utilidades.TOINT(CategoriaDropDownList.SelectedValue), Convert.ToDecimal(MontoTextBox.Text)));
+            LlenarGrid(presupuesto);
+        }
+
+        public void LlenarGrid(Entidades.Presupuestos presupuesto)
+        {
+            DetalleGridView.DataSource = null;
+            DetalleGridView.DataSource = presupuesto.Relacion.ToList();
+            DetalleGridView.DataBind();
+        }
+
+        protected void AgregarButton_Click(object sender, EventArgs e)
+        {
+            AgregarDetalle();
         }
     }
 }
