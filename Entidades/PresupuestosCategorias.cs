@@ -13,18 +13,21 @@ namespace Entidades
         public int Id { get; set; }
         public int PresupestoId { get; set; }
         public int CategoriaId { get; set; }
+        public string Descripcion { get; set; }
         public decimal Monto { get; set; }
 
-        public Presupuestos Presupuesto { get; set; }
+        public Categorias Categoria { get; set; }
 
         public PresupuestosCategorias()
         {
 
         }
 
-        public PresupuestosCategorias(int categoriaId, decimal monto)
+        public PresupuestosCategorias(int presupuestoId, int categoriaId, string descripcion, decimal monto)
         {
+            this.PresupestoId = presupuestoId;
             this.CategoriaId = categoriaId;
+            this.Descripcion = descripcion;
             this.Monto = monto;
         }
     }

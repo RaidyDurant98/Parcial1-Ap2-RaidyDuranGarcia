@@ -79,17 +79,25 @@
                         <asp:Label ID="MontoLabel" runat="server" Text="Monto:"></asp:Label>
                         <asp:TextBox CssClass="form-control" ID="MontoTextBox" runat="server" AutoComplete="off"></asp:TextBox>
                     </div>
-                    
+
                     <asp:Button CssClass="btn btn-dafault" ID="AgregarButton" runat="server" Text="Agregar" OnClick="AgregarButton_Click" />
                 </div>
 
                 <div class="form-group">
-                    <asp:GridView ID="DetalleGridView" runat="server"></asp:GridView>
+                    <asp:GridView CssClass="table table-responsive table-hover" BorderStyle="None" ID="DetalleGridView" runat="server"
+                        AutoGenerateColumns="False" GridLines="Horizontal" DataKeyNames="Descripcion, Monto" ShowFooter="true">
+                        <HeaderStyle CssClass="bg-dark text-white" />
+                        <Columns>
+                            <asp:BoundField DataField="Descripcion" HeaderText="Categoria" />
+                            <asp:BoundField DataField="Monto" HeaderText="Monto" />
+                        </Columns>
+                        <FooterStyle CssClass="bg-dark" />
+                    </asp:GridView>
                 </div>
 
                 <!--Botones-->
                 <div class="text-center">
-                    <asp:Button CssClass="btn btn-dafault" ID="NuevoButton" runat="server" Text="Nuevo" />
+                    <asp:Button CssClass="btn btn-dafault" ID="NuevoButton" runat="server" Text="Nuevo" OnClick="NuevoButton_Click" />
                     <asp:Button CssClass="btn btn-primary" ID="GuardarButton" runat="server" Text="Guardar" OnClick="GuardarButton_Click" />
                     <asp:Button CssClass="btn btn-danger" ID="EnviarAlModalEliminarButton" runat="server" Text="Eliminar" OnClick="EnviarAlModalEliminarButton_Click" />
                 </div>
@@ -130,7 +138,7 @@
                 <asp:Label ID="AlertWarningLabel" runat="server" Text=""></asp:Label>
             </asp:Panel>
         </div>
-        <!--Col formulario-->
+    <!--Col formulario-->
     </div>
     <!--Container-fluid-->
 </body>

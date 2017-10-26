@@ -15,9 +15,16 @@ namespace Parcial1_Ap2_RaidyDuran.UI.Registros
         public PresupuestosCategorias Detalle = null;
         public Presupuestos presupuesto = null;
 
+        public PresupuestoForm()
+        {
+
+        }
+
         protected void Page_Load(object sender, EventArgs e)
         {
+            Detalle = new PresupuestosCategorias();
             presupuesto = new Presupuestos();
+
             AlertSuccessPanel.Visible = false;
             AlertInfoPanel.Visible = false;
             AlertDangerPanel.Visible = false;
@@ -124,6 +131,7 @@ namespace Parcial1_Ap2_RaidyDuran.UI.Registros
                 {
 
                     DatosPresupuesto();
+                    LlenarGrid(presupuesto);
                 }
                 else
                 {
@@ -204,8 +212,14 @@ namespace Parcial1_Ap2_RaidyDuran.UI.Registros
 
         private void AgregarDetalle()
         {
-            presupuesto.Relacion.Add(new Entidades.PresupuestosCategorias(Utilidades.TOINT(CategoriaDropDownList.SelectedValue), Convert.ToDecimal(MontoTextBox.Text)));
-            LlenarGrid(presupuesto);
+            int id = Utilidades.TOINT(CategoriaDropDownList.SelectedValue);
+            Detalle.Categoria = CategoriasBLL.Buscar(p => p.CategoriaId == id);
+
+            if (Detalle.Categoria != null)
+            {
+                presupuesto.Relacion.Add(new Entidades.PresupuestosCategorias(presupuesto.PresupuestoId, Detalle.Categoria.CategoriaId, Detalle.Categoria.Descripcion, Convert.ToDecimal(MontoTextBox.Text)));
+                LlenarGrid(presupuesto);
+            }
         }
 
         public void LlenarGrid(Entidades.Presupuestos presupuesto)
